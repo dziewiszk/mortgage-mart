@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_rates
+    description: "Weekly average 30-year fixed mortgage rate from Freddie Mac via FRED, one row per week. Weeks with no reading are dropped."
+    columns:
+      - name: observation_date
+        description: "Date of the weekly reading."
+        data_tests:
+          - not_null
+          - unique
+      - name: rate_30yr_fixed_pct
+        description: "Average 30-year fixed rate, in percent."
+        data_tests:
+          - not_null
+          
