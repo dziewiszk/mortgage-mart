@@ -21,6 +21,7 @@ select
     loan_purpose,
     lien_status,
     occupancy_type,
+    total_units,
     try_cast(loan_amount as double) as loan_amount,
     try_cast(interest_rate as double) as interest_rate,
     try_cast(rate_spread as double) as rate_spread,
