@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_lender
+    description: "One row per lender that filed 2025 HMDA data. Descriptive details used to slice loan applications by lender."
+    columns:
+      - name: lei
+        description: "Legal entity identifier. Primary key, and the link from loan applications."
+        data_tests:
+          - not_null
+          - unique
+      - name: lender_name
+        description: "Lender name from the transmittal sheet."
+        data_tests:
+          - not_null
+          
