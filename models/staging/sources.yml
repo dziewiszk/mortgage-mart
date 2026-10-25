@@ -6,3 +6,4 @@ sources:
     tables:
       - name: hmda_ohio
       - name: mortgage_rates
+      - name: hmda_lenders

@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_lenders
+    description: "One row per lender that filed 2025 HMDA data, with parent company and size. Source: Philadelphia Fed HMDA Lender File, an unofficial estimate."
+    columns:
+      - name: lei
+        description: "Legal entity identifier. Links to the loan records."
+        data_tests:
+          - not_null
+          - unique
+      - name: lender_name
+        description: "Lender name from the transmittal sheet."
+        data_tests:
+          - not_null
+          
