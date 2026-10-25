@@ -11,6 +11,11 @@ con.execute("""
     create or replace table raw.mortgage_rates as
     select * from read_csv_auto('data/MORTGAGE30US.csv', all_varchar=true)
 """)
+con.execute("""
+    create or replace table raw.hmda_lenders as
+    select * from read_csv_auto('data/hmda_lender_file.csv', all_varchar=true)
+""")
 
 print("hmda rows:", con.execute("select count(*) from raw.hmda_ohio").fetchone()[0])
 print("rate rows:", con.execute("select count(*) from raw.mortgage_rates").fetchone()[0])
+print("lender rows:", con.execute("select count(*) from raw.hmda_lenders").fetchone()[0])
